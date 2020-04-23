@@ -9,8 +9,11 @@ var argButtonName, buttonTest;
  */
 function buttonClicked(argButtonName) {
   clearMessages();
-  PlayerMove = argButtonNAme;
+  PlayerMove == argButtonNAme;
   console.log(argButtonName + ' został kliknięty');
+  1 == kamień;
+  2 == papier;
+  3 == nożyce;
   function displayResult(argPlayerMove, argComputerMove) {
 
     if(argPlayerMove === 1 && argComputerMove === 2) {
