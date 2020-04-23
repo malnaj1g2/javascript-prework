@@ -1,5 +1,5 @@
 
-displayResult(1, 2)
+
 
 
 var argButtonName, buttonTest;
@@ -39,7 +39,7 @@ function buttonClicked(argButtonName) {
     }
 
   }
-
+displayResult(1, 2)
 
 }
 buttonTest = document.getElementById('button-test');
