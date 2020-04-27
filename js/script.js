@@ -43,10 +43,10 @@ displayResult(1, 2)
 
 }
 buttonTest = document.getElementById('button-test');
-buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
+buttonTest.addEventListener('click', function(Test){ buttonClicked('Guzik TEST'); });
 argButtonName = document.getElementById(' button-rock');
-argButtonName.addEventListener('click', function(){ buttonClicked(' kamień'); });
-argButtonName = document.getElementById(' button-paer');
-argButtonName.addEventListener('click', function(){ buttonClicked('papier'); });
+argButtonName.addEventListener('click', function(Kamień){ buttonClicked(' kamień'); });
+argButtonName = document.getElementById(' button-paper');
+argButtonName.addEventListener('click', function(Papier){ buttonClicked('papier'); });
 argButtonName = document.getElementById('button-scissors');
-argButtonName.addEventListener('click', function(){ buttonClicked(' nożyce'); });
+argButtonName.addEventListener('click', function(Nożyce){ buttonClicked(' nożyce'); });
