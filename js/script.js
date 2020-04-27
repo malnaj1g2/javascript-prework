@@ -16,22 +16,22 @@ function buttonClicked(argButtonName) {
   3 == nożyce;
   function displayResult(argPlayerMove, argComputerMove) {
 
-    if(argPlayerMove === 1 && argComputerMove === 2) {
+    if(argPlayerMove === kamień && argComputerMove === papier) {
       console.log('Przegrywasz');
     }
-    else if(argPlayerMove === 2 && argComputerMove === 1) {
+    else if(argPlayerMove === papier && argComputerMove === kamień) {
       console.log('Wygrywasz')
     }
-    else if(argPlayerMove === 3 && argComputerMove === 1) {
+    else if(argPlayerMove === nożyce && argComputerMove === kamień) {
       console.log('Przegrywasz')
     }
-    else if(argPlayerMove === 3 && argComputerMove === 2) {
+    else if(argPlayerMove === nożyce && argComputerMove === papier) {
       console.log('Wygrywasz')
     }
-    else if(argPlayerMove === 1 && argComputerMove === 3) {
+    else if(argPlayerMove === kamień && argComputerMove === nożyce) {
       console.log('Wygrywasz')
     }
-    else if(argPlayerMove === 2 && argComputerMove === 3) {
+    else if(argPlayerMove === kamień && argComputerMove === nożyce) {
       console.log('Przegrywasz')
     }
     else {
@@ -45,8 +45,8 @@ displayResult(1, 2)
 buttonTest = document.getElementById('button-test');
 buttonTest.addEventListener('click', function(Test){ buttonClicked('Guzik TEST'); });
 argButtonName = document.getElementById(' button-rock');
-argButtonName.addEventListener('click', function(Kamień){ buttonClicked(' kamień'); });
+argButtonName.addEventListener('click', function(kamień){ buttonClicked(' kamień'); });
 argButtonName = document.getElementById(' button-paper');
-argButtonName.addEventListener('click', function(Papier){ buttonClicked('papier'); });
+argButtonName.addEventListener('click', function(papier){ buttonClicked('papier'); });
 argButtonName = document.getElementById('button-scissors');
-argButtonName.addEventListener('click', function(Nożyce){ buttonClicked(' nożyce'); });
+argButtonName.addEventListener('click', function(nożyce){ buttonClicked(' nożyce'); });
