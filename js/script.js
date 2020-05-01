@@ -1,52 +1,73 @@
 
-
-
-
-var argButtonName, buttonTest;
+const gameSummary={
+  numbers: 0,
+  wins: 0,
+  lost: 0,
+  draw: 0,
+  argPlayerMove:"",
+  argComputerMove:"",
+}
+/*pobieram wartość
+gameSumary.numbers
+wydziela osobne wartości
+*/
 
 /**
  * Describe this function...
  */
 function buttonClicked(argButtonName) {
   clearMessages();
-  PlayerMove == argButtonNAme;
+  gameSummary.numbers = gameSummary.numbers +1
+
+
+gameSummary.argPlayerMove = argButtonName
+gameSummary.argComputerMove = Math.floor(Math.random()*3)
   console.log(argButtonName + ' został kliknięty');
-  1 == kamień;
-  2 == papier;
-  3 == nożyce;
+
   function displayResult(argPlayerMove, argComputerMove) {
 
-    if(argPlayerMove === kamień && argComputerMove === papier) {
-      console.log('Przegrywasz');
+    if(argPlayerMove === 1 && argComputerMove === 2) {
+      printMessage('Przegrywasz');
+      gameSummary.lost = gameSummary.lost +1
     }
-    else if(argPlayerMove === papier && argComputerMove === kamień) {
-      console.log('Wygrywasz')
+    else if(argPlayerMove === 2 && argComputerMove === 1) {
+      printMessage('Wygrywasz')
+        gameSummary.wins = gameSummary.wins +1
     }
-    else if(argPlayerMove === nożyce && argComputerMove === kamień) {
-      console.log('Przegrywasz')
+    else if(argPlayerMove === 3 && argComputerMove === 1) {
+      printMessage('Przegrywasz')
+        gameSummary.lost = gameSummary.lost +1
     }
-    else if(argPlayerMove === nożyce && argComputerMove === papier) {
-      console.log('Wygrywasz')
+    else if(argPlayerMove === 3 && argComputerMove === 2) {
+      printMessage('Wygrywasz')
+      gameSummary.wins = gameSummary.wins +1
     }
-    else if(argPlayerMove === kamień && argComputerMove === nożyce) {
-      console.log('Wygrywasz')
+    else if(argPlayerMove === 1 && argComputerMove === 3) {
+      printMessage('Wygrywasz')
+      gameSummary.wins = gameSummary.wins +1
     }
-    else if(argPlayerMove === kamień && argComputerMove === nożyce) {
-      console.log('Przegrywasz')
+    else if(argPlayerMove === 1 && argComputerMove === 3) {
+      printMessage('Przegrywasz')
+        gameSummary.lost = gameSummary.lost +1
     }
     else {
-      console.log('Remis')
+      printMessage('Remis')
+      gameSummary.draw = gameSummary.draw +1
     }
 
   }
-displayResult(1, 2)
-
+displayResult(gameSummary.argPlayerMove, gameSummary.argComputerMove)
+document.querySelector('.numbers span').innerHTML = gameSummary.numbers
+document.querySelector('.won span').innerHTML = gameSummary.wins
+document.querySelector('.lost span').innerHTML = gameSummary.lost
+document.querySelector('.draw span').innerHTML = gameSummary.draw
 }
-buttonTest = document.getElementById('button-test');
-buttonTest.addEventListener('click', function(Test){ buttonClicked('Guzik TEST'); });
-argButtonName = document.getElementById(' button-rock');
-argButtonName.addEventListener('click', function(kamień){ buttonClicked(' kamień'); });
-argButtonName = document.getElementById(' button-paper');
-argButtonName.addEventListener('click', function(papier){ buttonClicked('papier'); });
-argButtonName = document.getElementById('button-scissors');
-argButtonName.addEventListener('click', function(nożyce){ buttonClicked(' nożyce'); });
+
+const buttonTest = document.getElementById('button-test');
+buttonTest.addEventListener('click', function(){ buttonClicked(); });
+const argButtonRock = document.getElementById('button-rock');
+argButtonRock.addEventListener('click', function(){ buttonClicked(1); });
+const argButtonPaper = document.getElementById('button-paper');
+argButtonPaper.addEventListener('click', function(){ buttonClicked(2); });
+const argButtonScissors = document.getElementById('button-scissors');
+argButtonScissors.addEventListener('click', function(){ buttonClicked(3); });
